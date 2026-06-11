@@ -37,6 +37,9 @@ void esp_now_setup()
     WiFi.mode(WIFI_STA);
     delay(200);
 
+    uint8_t newMACAddress[] = {0x68, 0x25, 0xdd, 0xfd, 0x24, 0x94}; // pump sensor 68:25:dd:fd:24:94
+    esp_wifi_set_mac(WIFI_IF_STA, &newMACAddress[0]);
+
     // Установим канал 1 явно до инициализации ESP-NOW
     esp_wifi_set_channel(1, WIFI_SECOND_CHAN_NONE);
 
